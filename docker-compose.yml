@@ -10,11 +10,11 @@ services:
       dockerfile: src/Dockerfile
     restart: unless-stopped
 
-  proxy:
-    image: nginx:1.17
+  nginx:
+    image: nginx:latest
     restart: unless-stopped
     ports:
-      - "80:80"
+      - "30:30"
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - /home/rnd/IdeaProjects/APIping/nginx/default.conf
 
