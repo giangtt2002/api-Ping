@@ -1,7 +1,7 @@
 FROM amazoncorretto:17-alpine-jdk
 
 # Refer to Maven build -> finalName
-ARG JAR_FILE=target/APIping-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=target/*.jar
 
 
 # cd /opt/app
