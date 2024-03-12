@@ -5,9 +5,8 @@ services:
     container_name: ping-server
     ports:
       - "8080:8080"
-    image: test9:image
     build:
-      dockerfile: src/Dockerfile
+      context: ./src/Dockerfile
     restart: unless-stopped
 
   nginx:
@@ -16,5 +15,7 @@ services:
     ports:
       - "30:30"
     volumes:
-      - /home/rnd/IdeaProjects/APIping/nginx/default.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - ping-server
 
